@@ -12,32 +12,34 @@
   <body class="body">
     <div id="app" class="app">
       <main class="main">
-        <div v-if=submited>
-          <div class="box">
-            <figure class="validation-figure">
-              <img src="./assets/illustration-thank-you.svg" alt="Congratulation Icon" class="validation-submit-img">
-              <figcaption class="validation-caption">You selected {{ selected }} out of {{ ratings.length }}</figcaption>
-            </figure>
-            <h1 class="title">Thank you!</h1>
-            <p class="description">We appreciate you taking the time to give a rating. If tou ever need more support, don't hesitate to get in touch!</p>
-          </div>
+        <div class="box" v-if=submited>
+          <figure class="validation-figure">
+            <img src="./assets/illustration-thank-you.svg" alt="Congratulation Icon" class="validation-submit-img">
+            <figcaption class="validation-caption">You selected {{ selected }} out of {{ ratings.length }}</figcaption>
+          </figure>
+          <h1 class="title">Thank you!</h1>
+          <p class="description">We appreciate you taking the time to give a rating. If tou ever need more support, don't hesitate to get in touch!</p>
         </div>
-        <div v-else>
-          <div class="box">
-            <div class="star-ctn">
-              <img src="./assets/icon-star.svg" alt="Star Icon">
-            </div>
+        <div class="box" v-else>
+          <div class="star-ctn">
+            <img src="./assets/icon-star.svg" alt="Star Icon" class="star">
+          </div>
+          <div class="text-ctn">
             <h1 class="title">How did we do?</h1>
             <p class="description">Please let us know how we did with your support request. All feedback is appreciated to help us improve our offering!</p>
-            <form class="form">
-              <template v-for="rating in ratings" :key=ratings[rating-1]>
-                <label :for=ratings[rating-1] class="rating-label">{{ ratings[rating-1] }}</label>
-                <input type="radio" :id=ratings[rating-1] :value=ratings[rating-1] name="ratings" class="rating-radio-btn">
-              </template>
-              <input type="submit" value="Submit" class="submit-btn">
-            </form>
           </div>
-        </div>
+          <form class="form">
+            <div class="ratings-ctn">
+              <template v-for="rating in ratings" :key=ratings[rating-1]>
+                <div class="rating-ctn">
+                  <input type="radio" :id=ratings[rating-1] :value=ratings[rating-1] name="ratings" class="rating-radio-btn">
+                  <label :for=ratings[rating-1] class="rating-label"><span>{{ ratings[rating-1] }}</span></label>
+                </div>
+                </template>
+            </div>  
+            <input type="submit" value="SUBMIT" class="submit-btn">
+          </form>
+        </div> 
       </main>
     </div>
     <script src="https://unpkg.com/vue@3"></script>
