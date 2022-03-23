@@ -126,3 +126,9 @@
     color: hsl(25, 97%, 53%);
     background-color: hsl(0, 0%, 100%);
 }
+
+.submit-btn:disabled:hover {
+  color: hsl(0, 0%, 100%);
+  background-color: hsl(217, 12%, 63%);
+  cursor: not-allowed;
+}

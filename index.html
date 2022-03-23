@@ -28,16 +28,16 @@
             <h1 class="title">How did we do?</h1>
             <p class="description">Please let us know how we did with your support request. All feedback is appreciated to help us improve our offering!</p>
           </div>
-          <form class="form">
+          <form class="form" @submit.prevent="handleSubmit()">
             <div class="ratings-ctn">
               <template v-for="rating in ratings" :key=ratings[rating-1]>
                 <div class="rating-ctn">
-                  <input type="radio" :id=ratings[rating-1] :value=ratings[rating-1] name="ratings" class="rating-radio-btn">
+                  <input type="radio" :id=ratings[rating-1] :value=ratings[rating-1] name="ratings" class="rating-radio-btn" v-model="selected">
                   <label :for=ratings[rating-1] class="rating-label"><span>{{ ratings[rating-1] }}</span></label>
                 </div>
                 </template>
             </div>  
-            <input type="submit" value="SUBMIT" class="submit-btn">
+            <input type="submit" value="SUBMIT" class="submit-btn" :disabled=!selected>
           </form>
         </div> 
       </main>
