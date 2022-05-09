@@ -34,27 +34,38 @@
   justify-content: space-between;
 }
 
+@media screen and (max-width: 768px) {
+  .box {
+    max-width: 90%;
+    max-height: 90%;
+  }
+  .rating-radio-btn + .rating-label {
+    max-width: 85%;
+    max-height: 85%;
+  }
+}
+
 /* Before Submit */
 .star-ctn {
   background-color: hsl(213, 19%, 18%);
-  width: 3rem;
-  height: 3rem;
+  max-width: 3rem;
+  min-height: 3rem;
   border-radius: 100%;
   display: flex;
 }
 
 .star {
   margin: auto;
-  width: 1rem;
+  max-width: 1rem;
 }
 
 .title {
-  font-size: 28px;
+  font-size: 1.6rem;
 }
 
 .description {
   margin-top: 1rem;
-  font-size: 15px;
+  font-size: 1rem;
   color: hsl(217, 12%, 63%);
 }
 
